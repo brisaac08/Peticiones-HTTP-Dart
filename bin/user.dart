@@ -20,6 +20,7 @@ class User {
   }
 }
 
+// Función para filtrar los usuarios con username mayor de 6 caracteres
 void filterUserByUsername(List<User> users) {
   final filteredUsers =
       users.where((user) => user.username.length > 6).toList();
@@ -32,6 +33,7 @@ void filterUserByUsername(List<User> users) {
   });
 }
 
+// Función para contar los usuarios con dominio .biz
 void countUsersByEmailDomain(List<User> users) {
   final count = users.where((user) => user.email.endsWith('.biz')).length;
 

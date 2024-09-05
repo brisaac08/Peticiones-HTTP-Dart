@@ -14,6 +14,7 @@ void main() async {
 
     List<User> users = jsonData.map((json) => User.fromJson(json)).toList();
 
+    // Muestra los datos de los usuarios
     users.forEach((user) {
       print('ID: ${user.id}');
       print('Name: ${user.name}');
@@ -22,10 +23,14 @@ void main() async {
       print('---');
     });
 
+    // Cuenta el total de usuarios y muestra los usuarios con username mayor de 6 caracteres
+    print('Total de usuarios: ${users.length}');
     print('---');
     print('Usuarios con username mayor de 6 caracteres:');
+    // Llama a la función filterUserByUsername para filtrar los usuarios con username mayor de 6 caracteres
     filterUserByUsername(users);
     print('---');
+    // Llama a la función countUsersByEmailDomain para contar los usuarios con dominio .biz
     print('Usuarios con dominio .biz:');
     countUsersByEmailDomain(users);
   } else {
